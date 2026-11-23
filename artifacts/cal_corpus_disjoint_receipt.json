@@ -1,0 +1,10 @@
+{
+  "n_cal_tokens": 8192,
+  "n_cal_sequences": 16,
+  "seq_len": 512,
+  "benchmark_8grams_checked": 846176,
+  "overlap_8grams": 0,
+  "crc32c": "0x6792f545",
+  "heldout_oracle_probes": 64,
+  "heldout_probe_len": 64
+}

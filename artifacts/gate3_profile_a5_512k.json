@@ -1,0 +1,101 @@
+{
+  "schema": "hy4_770b_gate_eval_v1",
+  "profile": "ProfileA-Fidelity-FP8-HLUT4-Q5",
+  "max_kv_len": 524288,
+  "p150_active": true,
+  "dfly2_active": true,
+  "tier_plan": {
+    "vram_fp8_per_layer": 20,
+    "vram_hlut4_per_layer": 42,
+    "vram_hlut3_per_layer": 0,
+    "vram_hlut2_per_layer": 0,
+    "vram_total_per_layer": 62,
+    "ddr4_hlut4_per_layer": 0,
+    "ddr4_q5_per_layer": 194,
+    "p150_hlut4": 42,
+    "p150_hlut3": 0,
+    "p150_hlut2": 0,
+    "p150_l1_hot_total": 14,
+    "vram_experts_total": 4774,
+    "vram_experts_pct": 24.218750
+  },
+  "memory_gib": {
+    "mi50_used": [30.673828,29.515625,29.515625,14.828125,12.121094],
+    "mi50_total": [31.984375,31.984375,31.984375,15.984375,15.984375],
+    "p150_used": [29.312073,29.312073],
+    "p150_l1_mib": 241.312500,
+    "ddr4_cold_gib": 336.433228,
+    "kv_vram_gib": 30.913178
+  },
+  "cumulative_tiers": {
+    "total_routes": 13206232,
+    "tensix_l1_pct": 0.030205,
+    "mi50_hbm2_pct": 12.327710,
+    "p150_gddr6_pct": 21.130478,
+    "epyc_ddr4_pct": 66.511606
+  },
+  "gate2_fidelity": {
+    "ran": false,
+    "num_probes": 0,
+    "mean_kl_nats": 0.000000,
+    "kl_ci95_nats": 0.000000,
+    "median_kl_nats": 0.000000,
+    "p95_kl_nats": 0.000000,
+    "max_kl_nats": 0.000000,
+    "mean_top10_kl_nats": 0.000000,
+    "mean_ear10_pct": 0.000000,
+    "top1_agree_pct": 0.000000,
+    "top1_matches": 0,
+    "mean_delta_ppl": 0.000000,
+    "mean_logit_cos": 0.000000,
+    "vs_two_station_mxfp4_kl_ratio": 0.000000,
+    "wall_sec": 0.000000
+  },
+  "gate3_accuracy": {
+    "ran": true,
+    "gsm8k_total": 71,
+    "gsm8k_correct": 71,
+    "gsm8k_pct": 100.000000,
+    "mmlu_pro_total": 0,
+    "mmlu_pro_correct": 0,
+    "mmlu_pro_pct": 0.000000,
+    "needle_total": 0,
+    "needle_found": 0,
+    "needle_pct": 0.000000,
+    "wall_sec": 8437.256021
+  },
+  "gate4_throughput": {
+    "ran": false,
+    "cold_4k_prefill_tok_s": 0.000000,
+    "dfly2_exact_match": 0,
+    "dfly2_exact_total": 0,
+    "vit_40l_ok": false,
+    "vit_40l_tokens": 0,
+    "vit_40l_ms": 0.000000,
+    "heldout_decode_tok_s": 0.000000,
+    "peak_decode_tok_s": 0.000000,
+    "workstation_capex_usd": 9850.000000,
+    "tok_s_per_10k_usd": 0.000000,
+    "ctx_scaling": [
+    ],
+    "kvblk_cold_restore": [
+    ],
+    "wall_sec": 0.000000
+  },
+  "external_two_station_baseline": {
+    "hardware": "2x DGX Station GB300 + 2x RTX PRO 6000 + 400GbE",
+    "estimated_capex_usd": 220000.0,
+    "fp8_grace_tok_s": 27.8,
+    "mxfp4_sidecar_tok_s": 69.9,
+    "mxfp4_sidecar_kl_nats": 0.083,
+    "mxfp4_sidecar_top1_pct": 93.8,
+    "q4_k_m_kl_nats": 0.146,
+    "iq2_kl_nats": 0.394,
+    "stq1_0_kl_nats": 0.569,
+    "dfly2_verify_ms_2k": 106.3,
+    "dfly2_verify_ms_512k": 116.4,
+    "gsm8k_fp8_pct": 97.4,
+    "mmlu_pro_fp8_pct": 85.0,
+    "needles_fp8": "18/18"
+  }
+}

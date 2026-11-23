@@ -1,0 +1,152 @@
+{
+  "schema": "hy4_770b_master_ledger_v1",
+  "station_id": "SB-M5-P2-192G",
+  "hardware": {
+    "cpu": "AMD EPYC 7542 32-Core Processor",
+    "host_ddr4_gib": 384,
+    "ddr4_2m_anon_hugepages_gib": 336.57,
+    "mi50_gpus": "5x AMD Instinct MI50 (3x32G + 2x16G = 128 GiB HBM2) on external 96-lane Broadcom Gen4 4-GPU switched backplane dock (2x x16 = 64 GB/s host uplinks)",
+    "p150_mesh": "2x Tenstorrent Blackhole P150A (64 GiB GDDR6 + 330 MiB L1 SRAM, 4x 800G = 3.2 Tbps FABRIC_1D mesh)",
+    "storage": "Dual-NVMe O_DIRECT .kvblk",
+    "pcie_aer_nonfatal_fatal": "0/0 across 5/5 MI50s (69/69 PCIe endpoints)"
+  },
+  "model": {
+    "base_model": "tencent/Hy4",
+    "total_params_b": 770,
+    "active_params_b": 49,
+    "layers": 78,
+    "routed_experts_note": "1 dense L00 + 77 MoE layers x 256/L = 19,712 routed experts",
+    "routed_experts_total": 19712,
+    "dfly2_params_b": 3.3,
+    "vit_layers": 40,
+    "vit_params_b": 1.23
+  },
+  "profile_a": {
+    "profile": "ProfileA-Fidelity-FP8-HLUT4-Q5",
+    "max_kv_len": 524288,
+    "p150_active": true,
+    "dfly2_active": true,
+    "tier_plan": {
+      "vram_fp8_per_layer": 20,
+      "vram_hlut4_per_layer": 42,
+      "vram_hlut3_per_layer": 0,
+      "vram_hlut2_per_layer": 0,
+      "vram_total_per_layer": 62,
+      "ddr4_q5_per_layer": 194,
+      "p150_l1_hot_total": 13,
+      "vram_experts_total": 4774,
+      "vram_experts_pct": 24.218750
+    },
+    "memory_gib": {
+      "mi50_used": [30.673828, 29.515625, 29.515625, 14.828125, 12.121094],
+      "mi50_total": [31.984375, 31.984375, 31.984375, 15.984375, 15.984375],
+      "p150_used": [29.312073, 29.312073],
+      "p150_l1_mib": 241.312500,
+      "ddr4_cold_gib": 336.433228,
+      "kv_vram_gib": 30.913178
+    },
+    "cumulative_tiers": {
+      "total_routes": 13206232,
+      "tensix_l1_pct": 4.315261,
+      "mi50_hbm2_pct": 29.797121,
+      "p150_gddr6_pct": 18.295197,
+      "epyc_ddr4_pct": 47.592421
+    },
+    "gate2_fidelity": {
+      "ran": true,
+      "num_probes": 64,
+      "mean_kl_nats": 0.055777,
+      "kl_ci95_nats": 0.038450,
+      "median_kl_nats": 0.001962,
+      "p95_kl_nats": 0.169719,
+      "max_kl_nats": 0.990490,
+      "mean_top10_kl_nats": 0.051602,
+      "mean_ear10_pct": 84.687500,
+      "top1_agree_pct": 95.312500,
+      "top1_matches": 61,
+      "mean_delta_ppl": 0.074085,
+      "mean_logit_cos": 0.983285,
+      "vs_two_station_mxfp4_kl_ratio": 1.488078,
+      "cal_8gram_overlap": 0,
+      "wall_sec": 4596.293385
+    },
+    "gate3_accuracy": {
+      "ran": true,
+      "gsm8k_total": 71,
+      "gsm8k_correct": 71,
+      "gsm8k_pct": 100.000000,
+      "cont_b32_tok_s": 2.33,
+      "mmlu_pro_total": 0,
+      "mmlu_pro_correct": 0,
+      "mmlu_pro_pct": 0.000000,
+      "needle_total": 0,
+      "needle_found": 0,
+      "needle_pct": 0.000000,
+      "wall_sec": 8437.256021
+    },
+    "gate4_throughput": {
+      "ran": true,
+      "cold_4k_prefill_tok_s": 4.452666,
+      "short_prompt_prefill_tok_s": 9.49,
+      "dfly2_exact_match": 32,
+      "dfly2_exact_total": 32,
+      "vit_40l_ok": true,
+      "vit_40l_tokens": 294,
+      "vit_40l_ms": 11402.812321,
+      "heldout_decode_tok_s": 1.404114,
+      "live_8050_decode_tok_s_t1": 3.087929,
+      "live_8050_decode_tok_s_t2": 3.231161,
+      "peak_decode_tok_s": 3.550000,
+      "peak_decode_mode": "DFly2_M3_2MiB_AnonHugePages_26C",
+      "workstation_capex_usd": 9850.000000,
+      "tok_s_per_10k_usd": 3.604061,
+      "single_stream_2m_thp_sweep": [
+        {"M": 1, "drafts": 0, "code_tok_s": 2.41, "math_tok_s": 2.31, "step_ms": 415.7, "draft_ms": 0.0, "verify_ms": 415.7, "attn_ms_L": 2.18, "moe_wall_ms_L": 2.79, "mi50_ms_L": 1.27, "p150_ms_L": 1.00, "ddr4_ms_L": 2.68, "ddr4_eff_gb_s": 35.3},
+        {"M": 2, "drafts": 1, "code_tok_s": 3.06, "math_tok_s": 3.18, "step_ms": 610.1, "draft_ms": 27.1, "verify_ms": 583.0, "attn_ms_L": 2.44, "moe_wall_ms_L": 4.58, "mi50_ms_L": 1.60, "p150_ms_L": 1.39, "ddr4_ms_L": 4.53, "ddr4_eff_gb_s": 39.9},
+        {"M": 3, "drafts": 2, "code_tok_s": 3.55, "math_tok_s": 3.10, "step_ms": 740.2, "draft_ms": 41.4, "verify_ms": 698.8, "attn_ms_L": 2.59, "moe_wall_ms_L": 5.91, "mi50_ms_L": 2.02, "p150_ms_L": 1.76, "ddr4_ms_L": 5.87, "ddr4_eff_gb_s": 40.7},
+        {"M": 4, "drafts": 3, "code_tok_s": 3.29, "math_tok_s": 3.14, "step_ms": 933.3, "draft_ms": 56.5, "verify_ms": 876.8, "attn_ms_L": 2.80, "moe_wall_ms_L": 7.61, "mi50_ms_L": 2.13, "p150_ms_L": 1.91, "ddr4_ms_L": 7.59, "ddr4_eff_gb_s": 41.5},
+        {"M": 6, "drafts": 5, "code_tok_s": 2.79, "math_tok_s": 3.43, "step_ms": 1256.1, "draft_ms": 89.2, "verify_ms": 1166.9, "attn_ms_L": 3.46, "moe_wall_ms_L": 10.69, "mi50_ms_L": 2.36, "p150_ms_L": 2.36, "ddr4_ms_L": 10.69, "ddr4_eff_gb_s": 41.7}
+      ],
+      "ctx_scaling": [
+        {"ctx_len": 2048, "runs": 3, "tok_s_mean": 1.261023, "tok_s_sd": 0.021603, "verify_ms_mean": 2103.800558, "verify_ms_sd": 11.242006, "draft_ms_mean": 150.972083, "accept_pct": 37.168350, "tok_per_step": 2.858418, "prefill_tok_s": 5.042786, "l1_pct": 0.018827, "mi50_pct": 8.407146, "p150_pct": 17.301305, "ddr4_pct": 74.272722},
+        {"ctx_len": 16384, "runs": 3, "tok_s_mean": 1.487281, "tok_s_sd": 0.045559, "verify_ms_mean": 2131.905715, "verify_ms_sd": 2.045404, "draft_ms_mean": 156.507356, "accept_pct": 48.615984, "tok_per_step": 3.430799, "prefill_tok_s": 3.989438, "l1_pct": 0.008779, "mi50_pct": 8.333240, "p150_pct": 18.633684, "ddr4_pct": 73.024296},
+        {"ctx_len": 131072, "runs": 3, "tok_s_mean": 0.429032, "tok_s_sd": 0.022447, "verify_ms_mean": 2555.508710, "verify_ms_sd": 24.763109, "draft_ms_mean": 156.989219, "accept_pct": 3.779229, "tok_per_step": 1.188961, "prefill_tok_s": 4.074339, "l1_pct": 0.052535, "mi50_pct": 10.879048, "p150_pct": 20.436418, "ddr4_pct": 68.631999},
+        {"ctx_len": 262144, "runs": 3, "tok_s_mean": 0.427634, "tok_s_sd": 0.064305, "verify_ms_mean": 2845.687664, "verify_ms_sd": 8.210088, "draft_ms_mean": 155.347833, "accept_pct": 7.594527, "tok_per_step": 1.379726, "prefill_tok_s": 3.370291, "l1_pct": 0.047513, "mi50_pct": 11.891124, "p150_pct": 20.842572, "ddr4_pct": 67.218791},
+        {"ctx_len": 524288, "runs": 3, "tok_s_mean": 0.342878, "tok_s_sd": 0.010526, "verify_ms_mean": 3546.174757, "verify_ms_sd": 58.087888, "draft_ms_mean": 155.265435, "accept_pct": 5.586298, "tok_per_step": 1.279315, "prefill_tok_s": 2.610018, "l1_pct": 0.045340, "mi50_pct": 10.973165, "p150_pct": 19.564380, "ddr4_pct": 69.417116}
+      ],
+      "kvblk_cold_restore": [
+        {"ctx_len": 262144, "save_ms": 19123.654623, "restore_e2e_ms": 12107.625931, "restore_tok_s": 21651.147921, "disk_gb_s": 1.167863, "ok": true},
+        {"ctx_len": 524288, "save_ms": 61100.223222, "restore_e2e_ms": 24358.688923, "restore_tok_s": 21523.654317, "disk_gb_s": 1.160986, "ok": true}
+      ],
+      "wall_sec": 10027.007085
+    }
+  },
+  "profile_b": {
+    "profile": "ProfileA-Fidelity-FP8-HLUT4-Q5-v1-AllFP8KV",
+    "max_kv_len": 524288,
+    "gate2_fidelity": {
+      "ran": true,
+      "num_probes": 64,
+      "mean_kl_nats": 0.058144,
+      "mean_ear10_pct": 83.906250,
+      "top1_agree_pct": 93.750000,
+      "top1_matches": 60
+    }
+  },
+  "external_two_station_baseline": {
+    "hardware": "2x DGX Station GB300 + 2x RTX PRO 6000 + 400GbE",
+    "estimated_capex_usd": 220000.0,
+    "fp8_grace_tok_s": 27.8,
+    "mxfp4_sidecar_tok_s": 69.9,
+    "mxfp4_sidecar_kl_nats": 0.083,
+    "mxfp4_sidecar_top1_pct": 93.8,
+    "q4_k_m_kl_nats": 0.146,
+    "iq2_kl_nats": 0.394,
+    "stq1_0_kl_nats": 0.569,
+    "dfly2_verify_ms_2k": 106.3,
+    "dfly2_verify_ms_512k": 116.4,
+    "gsm8k_fp8_pct": 97.4,
+    "mmlu_pro_fp8_pct": 85.0,
+    "needles_fp8": "18/18"
+  }
+}

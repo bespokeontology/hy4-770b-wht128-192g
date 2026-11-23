@@ -1,0 +1,35 @@
+Apache License, Version 2.0 (Runtime, Kernels, Packers, and Tooling)
+====================================================================
+
+Copyright (c) 2026 bespoke ontology (the kitchen)
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+
+--------------------------------------------------------------------
+Derived Model Weights Notice (Tencent Hy License, Version 1.0)
+--------------------------------------------------------------------
+
+The quantized and repacked expert weight artifacts derived from
+`tencent/Hy4` (770B total / 49B active MoE) — specifically the lossless
+stock FP8-g128 hot experts, WHT128-HLUT4 / WHT128-HLUT3 / WHT128-HLUT2
+RAREBAL-LDLQ experts, and Q5_LM128 cold-tail experts — are Derivative
+Works of `tencent/Hy4` and remain governed by the Tencent Hy License,
+Version 1.0 (full text included in `meta/TENCENT_HY_LICENSE.txt`).
+
+Section 4(b) Modification Notice:
+These weight shards were modified from upstream `tencent/Hy4` by
+bespoke ontology (the kitchen) with engineering collaboration from
+Google DeepMind / Gemini (Gemini Carbon & Gemini Neon) via
+frequency-sorted tiered repacking (FP8-g128 + WHT128-HLUT4 + Q5_LM128 /
+WHT128-HLUT3 + WHT128-HLUT2) for single-workstation inference on
+SB-M5-P2-192G.

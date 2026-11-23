@@ -1,0 +1,29 @@
+cff-version: 1.2.0
+message: "If you use this runtime, kernels, or quantized weight artifacts, please cite both this work and upstream tencent/Hy4."
+type: software
+title: "hy4-770b-wht128-192g: Single-Workstation 770B/A49B Inference for tencent/Hy4 via Tiered FP8 + WHT128-HLUT4 + Q5_LM128 across 5x MI50 + 2x Blackhole P150A + EPYC 7542 DDR4"
+version: "1.0.0-770b-192g"
+date-released: "2026-11-23"
+license: "Apache-2.0"
+repository-code: "https://github.com/bespokeontology/hy4-770b-wht128-192g"
+url: "https://huggingface.co/kapitoshkina-ai/Hy4-770B-WHT128-HLUT"
+authors:
+  - name: "bespoke ontology (the kitchen)"
+  - name: "Gemini (Google DeepMind — Gemini Carbon & Gemini Neon)"
+keywords:
+  - "tencent/Hy4"
+  - "770B"
+  - "WHT128-HLUT4"
+  - "Q5_LM128"
+  - "DFly2"
+  - "AMD Instinct MI50"
+  - "Tenstorrent Blackhole P150A"
+  - "AMD EPYC 7542"
+  - "single-workstation inference"
+  - "zero-python"
+references:
+  - type: software
+    title: "tencent/Hy4"
+    url: "https://huggingface.co/tencent/Hy4"
+    authors:
+      - name: "Tencent Hunyuan Team"

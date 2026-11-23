@@ -1,0 +1,17 @@
+{
+  "schema": "hy4_770b_gfx906_isa_audit_v1",
+  "target_arch": "gfx906",
+  "status": "PASS",
+  "total_kernels": 57,
+  "zero_scratch_kernels": 57,
+  "zero_sgpr_spill_kernels": 57,
+  "zero_vgpr_spill_kernels": 57,
+  "device_trig_instructions": 0,
+  "slc_system_rmw_atomics": 0,
+  "ds_read_b128_count": 52,
+  "v_dot2_f32_f16_count": 0,
+  "units": {
+    "hy4_770b_hlut_kernels": {"kernels": 27, "zero_scratch": 27, "max_vgpr": 65, "max_sgpr": 61, "max_lds_bytes": 24960},
+    "hy4_770b_core_kernels": {"kernels": 30, "zero_scratch": 30, "max_vgpr": 35, "max_sgpr": 48, "max_lds_bytes": 2320}
+  }
+}
